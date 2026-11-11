@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chương 6 – Đồng thời</title>
+<link rel="stylesheet" href="../css/chung.css">
+</head>
+<body>
+<header class="DauTrang"><div class="KhungChung DauTrangHop">
+<a href="../index.html" class="LogoChu">The Pragmatic<span>Programmer</span></a>
+<nav class="ThanhMenuChinh"><ul class="DanhSachMenu">
+<li><a href="../index.html">Trang chủ</a></li>
+<li class="MucMenuCoDropdown"><a href="../index.html#chuong" class="HienTai">Các chương</a><ul class="MenuXoXuong"><li><a href="chuong-1.html">Chương 1 · Triết lý thực dụng</a></li><li><a href="chuong-2.html">Chương 2 · Cách tiếp cận thực dụng</a></li><li><a href="chuong-3.html">Chương 3 · Công cụ cơ bản</a></li><li><a href="chuong-4.html">Chương 4 · Hoang tưởng thực dụng</a></li><li><a href="chuong-5.html">Chương 5 · Linh hoạt hoặc gãy đổ</a></li><li><a href="chuong-6.html">Chương 6 · Đồng thời</a></li><li><a href="chuong-7.html">Chương 7 · Khi bạn đang viết code</a></li><li><a href="chuong-8.html">Chương 8 · Trước khi bắt đầu dự án</a></li><li><a href="chuong-9.html">Chương 9 · Dự án thực dụng</a></li><li><a href="hau-ky.html">Hậu ký · Hậu ký: Đạo đức</a></li></ul></li>
+<li><a href="sotay.html">Sổ tay Tip</a></li>
+<li><a href="quiz.html">Quiz</a></li>
+</ul></nav>
+<a href="quiz.html" class="NutKhungHeader">Thử sức</a>
+</div></header>
+
+<section class="Hero HeroNho"><div class="KhungChung HeroNoiDung"><span class="NhanHero">CHƯƠNG 6</span><h1 class="HeroTieuDe">Đồng thời</h1><p>Cuộc sống không tuần tự. Hãy thiết kế để nhiều việc cùng diễn ra mà không giẫm chân lên nhau.</p></div></section>
+<section class="Muc MucKem"><div class="KhungChung"><div class="ThanhChuDe"><a href="#cd0">CĐ 33 · Phá bỏ ràng buộc thời gian</a><a href="#cd1">CĐ 34 · Trạng thái chia sẻ là sai</a><a href="#cd2">CĐ 35 · Actor và tiến trình</a><a href="#cd3">CĐ 36 · Bảng đen</a></div><article class="TheChuDe" id="cd0"><div class="Nhan">Chủ đề 33 · Breaking Temporal Coupling</div><h3>Phá bỏ ràng buộc thời gian</h3><ol class="DiemY"><li><b>Ràng buộc thời gian</b><span>Code giả định “việc này xong rồi mới tới việc kia” sẽ hạn chế khả năng chạy cùng lúc.</span></li><li><b>Phân tích quy trình</b><span>Vẽ sơ đồ hoạt động để tìm những việc độc lập có thể chạy đồng thời.</span></li><li><b>Đồng thời và song song</b><span>Đồng thời: nhiều việc cùng tiến triển. Song song: thực sự chạy cùng lúc trên nhiều lõi.</span></li></ol><div class="ThanhTip"><div class="Tip"><span class="SoTip">Tip 56</span>Phân tích quy trình để tăng đồng thời<em>Analyze Workflow to Improve Concurrency</em></div></div></article><article class="TheChuDe" id="cd1"><div class="Nhan">Chủ đề 34 · Shared State Is Incorrect State</div><h3>Trạng thái chia sẻ là sai</h3><ol class="DiemY"><li><b>Cập nhật không nguyên tử</b><span>Hai luồng cùng đọc – sửa – ghi dễ làm mất dữ liệu. Ví dụ miếng bánh cuối cùng trong quán ăn.</span></li><li><b>Giao dịch nhiều tài nguyên</b><span>Cần nhiều khóa dễ gây deadlock; hãy khóa theo một thứ tự nhất quán.</span></li><li><b>Cập nhật ngoài hệ thống</b><span>Dữ liệu ở API hay cơ sở dữ liệu bên ngoài cũng là trạng thái chia sẻ.</span></li></ol><div class="ThanhTip"><div class="Tip"><span class="SoTip">Tip 57</span>Trạng thái chia sẻ là trạng thái sai<em>Shared State Is Incorrect State</em></div><div class="Tip"><span class="SoTip">Tip 58</span>Lỗi ngẫu nhiên thường là lỗi đồng thời<em>Random Failures Are Often Concurrency Issues</em></div></div></article><article class="TheChuDe" id="cd2"><div class="Nhan">Chủ đề 35 · Actors and Processes</div><h3>Actor và tiến trình</h3><ol class="DiemY"><li><b>Actor là đơn vị đồng thời</b><span>Một tiến trình độc lập có trạng thái riêng và một hộp thư để nhận thông điệp.</span></li><li><b>Giao tiếp bằng thông điệp</b><span>Không chia sẻ trạng thái; mỗi lúc chỉ xử lý một thông điệp.</span></li><li><b>Không cần khóa tường minh</b><span>Không mutex hay semaphore; Erlang/Elixir đã đặt nền cho cách nghĩ này.</span></li></ol><div class="ThanhTip"><div class="Tip"><span class="SoTip">Tip 59</span>Dùng actor để đồng thời mà không chia sẻ trạng thái<em>Use Actors For Concurrency Without Shared State</em></div></div></article><article class="TheChuDe" id="cd3"><div class="Nhan">Chủ đề 36 · Blackboards</div><h3>Bảng đen</h3><ol class="DiemY"><li><b>Bảng đen của các thám tử</b><span>Mỗi người thêm dữ kiện lên bảng chung, không cần biết ai sẽ đọc hay dùng nó.</span></li><li><b>Tách rời các bên tham gia</b><span>Mỗi tác nhân độc lập, chỉ quan tâm dữ liệu xuất hiện trên bảng.</span></li><li><b>Hệ thống tin nhắn hiện đại</b><span>Kafka, NATS lưu sự kiện và truy xuất theo mẫu: giống một bảng đen.</span></li></ol><div class="ThanhTip"><div class="Tip"><span class="SoTip">Tip 60</span>Dùng bảng đen để phối hợp quy trình<em>Use Blackboards to Coordinate Workflow</em></div></div></article><div class="DieuHuong"><a class="NutXanh NutNho" href="chuong-5.html">← Chương 5</a><a class="NutXanh NutNho" href="../index.html#chuong">Tất cả các chương</a><a class="NutVang NutNho" href="chuong-7.html">Chương 7 →</a></div></div></section>
+<footer class="ChanTrang"><div class="KhungChung ChanTrangHop">
+<div><b>The Pragmatic Programmer – Lập trình viên thực dụng</b>Tác giả: Andrew Hunt &amp; David Thomas · Bản kỷ niệm 20 năm</div>
+<div><b>Sản phẩm học tập</b>Dự án READ – SKILL – CREATE · Môn Kỹ năng mềm</div>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,83 @@
+/* CHUNG.CSS — dùng cho tất cả các trang (font, màu, header, footer, nút, tiêu đề) */
+@font-face{font-family:'Chonburi';src:url('../fonts/Chonburi-Regular.ttf') format('truetype');font-display:swap}
+@font-face{font-family:'SF Pro';src:url('../fonts/SF-Pro.ttf') format('truetype');font-display:swap}
+@font-face{font-family:'Anybody';src:url('../fonts/Anybody-VariableFont.ttf') format('truetype');font-display:swap}
+:root{--xanh-dam:#033E1E;--xanh-header:#022713;--vang-chu:#F3BC02;--vang-nut:#F5C935;--do-tieu-de:#BD2D12;--nen-vang-nhat:#FEF8E6;--duong-ke:#4f6f60;--le:clamp(16px,4vw,48px)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:#fff;color:#111;font-family:'SF Pro',system-ui,-apple-system,'Segoe UI',sans-serif;line-height:1.6;overflow-x:hidden}
+button,input,select{font-family:inherit}a{color:inherit}
+.KhungChung{width:min(1200px,calc(100% - 2*var(--le)));margin:0 auto}
+.NutVang,.NutXanh{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:none;text-decoration:none;cursor:pointer;transition:background-color .2s,transform .2s}
+.NutVang{background:var(--vang-nut);color:#022713;font-weight:bold}.NutVang:hover{background:var(--vang-chu)}
+.NutXanh{background:var(--xanh-dam);color:#fff}.NutXanh:hover{background:#055a2c}
+.NutNho{font-size:15px;line-height:1;padding:9px 20px;border-radius:20px}
+.NutLon{font-size:18px;padding:16px 34px;border-radius:4px}
+.TieuDeMuc{display:flex;align-items:center;min-height:clamp(46px,5.3vw,64px);padding-left:clamp(18px,3.6vw,43px);border-left:3px solid var(--mau-vach,#000);font-size:clamp(18px,2.25vw,27px);font-weight:normal;text-transform:uppercase;color:#000}
+.PhanCach{display:flex;align-items:center;gap:25px;margin:0 0 34px}
+.PhanCach h2{font:normal clamp(22px,3vw,34px) 'Chonburi',serif;color:var(--do-tieu-de);text-align:center}
+.DuongKe{flex:1;height:2px;background:var(--do-tieu-de)}
+.DauTrang{background:var(--xanh-header);position:relative;z-index:100}
+.DauTrangHop{display:flex;align-items:center;justify-content:space-between;min-height:72px;gap:16px;position:relative}
+.LogoChu{font:normal 22px 'Chonburi',serif;color:#fff;text-decoration:none;line-height:1.1}.LogoChu span{color:var(--vang-chu);display:block;font-size:15px}
+.DanhSachMenu{display:flex;list-style:none;gap:clamp(14px,2.2vw,28px)}.DanhSachMenu li{position:relative}
+.DanhSachMenu li a{display:block;padding:8px 0;color:#FDEAAA;font-size:15px;text-decoration:none}
+.DanhSachMenu li a:hover,.DanhSachMenu li a.HienTai{color:#fff;font-weight:bold}
+.MenuXoXuong{display:none;position:absolute;top:100%;left:0;width:min(290px,80vw);background:#fff;border-top:3px solid var(--vang-chu);box-shadow:0 4px 12px rgba(19,3,4,.2);list-style:none;z-index:200}
+.MucMenuCoDropdown:hover .MenuXoXuong,.MucMenuCoDropdown:focus-within .MenuXoXuong{display:block}
+.MenuXoXuong li a{padding:11px 18px;color:#130304;font-size:14px;font-weight:normal;border-bottom:1px solid #f0ece1}
+.MenuXoXuong li a:hover{background:#f7f1e5;color:#bd2d12;font-weight:normal}
+.NutKhungHeader{border:1px solid var(--vang-chu);color:var(--vang-chu);padding:7px 20px;border-radius:4px;font-size:14px;text-decoration:none}.NutKhungHeader:hover{background:var(--vang-chu);color:#022713}
+.Hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#022713 0%,#033E1E 60%,#0b5a2d 100%);color:#fff}
+.Hero::after{content:"</>";position:absolute;right:4%;top:50%;transform:translateY(-50%);font:normal clamp(120px,22vw,300px) 'Chonburi',serif;color:rgba(243,188,2,.07);pointer-events:none}
+.HeroNoiDung{position:relative;z-index:1;padding:clamp(48px,9vw,110px) 0;max-width:760px;margin-left:0}
+.NhanHero{display:inline-block;font-size:13px;letter-spacing:.14em;color:var(--vang-chu);border:1px solid var(--vang-chu);padding:3px 14px;border-radius:99px}
+.HeroTieuDe{font:normal clamp(34px,6vw,62px)/1.12 'Chonburi',serif;margin:18px 0 12px}
+.HeroNho .HeroNoiDung{padding:clamp(36px,6vw,70px) 0}.HeroNho .HeroTieuDe{font-size:clamp(30px,4.6vw,48px)}
+.Hero p{color:#e8e2c8;font-size:clamp(16px,1.8vw,19px);max-width:640px}
+.HangNut{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+.NutVien{border:1px solid #fff;color:#fff;background:none}.NutVien:hover{background:#fff;color:#022713}
+.Muc{padding:clamp(40px,6vw,72px) 0}.MucKem{background:var(--nen-vang-nhat)}
+.HangSo{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin-top:-44px;position:relative;z-index:2}
+.OSo{background:#fff;border-top:4px solid var(--vang-chu);box-shadow:0 6px 18px rgba(2,39,19,.14);padding:20px;text-align:center}
+.OSo b{display:block;font:normal 44px 'Chonburi',serif;color:var(--xanh-dam)}.OSo span{color:#555;font-size:15px}
+.BaYTuong{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:26px}
+.BaYTuong div{border-left:3px solid var(--do-tieu-de);padding-left:18px}.BaYTuong b{display:block;font-size:18px;color:var(--xanh-dam)}.BaYTuong span{color:#444}
+.LuoiThe{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:22px}
+.TheChuong{background:#fff;border:1px solid #eadfb8;display:flex;flex-direction:column;gap:8px;padding:24px;text-decoration:none;transition:transform .2s,box-shadow .2s}
+.TheChuong:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(2,39,19,.15)}
+.TheChuong .So{font:normal 15px 'Chonburi',serif;color:var(--do-tieu-de);text-transform:uppercase}
+.TheChuong h3{font:normal 24px/1.25 'Chonburi',serif;color:var(--xanh-dam)}.TheChuong p{color:#555;font-size:15px;flex:1}
+.TheChuong .NutNho{align-self:flex-start;margin-top:6px}
+.DanhSachBai{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px;list-style:none;counter-reset:b}
+.DanhSachBai li{counter-increment:b;position:relative;padding:14px 16px 14px 64px;background:#fff;border:1px solid #eadfb8}
+.DanhSachBai li::before{content:counter(b);position:absolute;left:16px;top:6px;font:normal 34px 'Chonburi',serif;color:var(--vang-chu);-webkit-text-stroke:1px #b58b00}
+.ThanhChuDe{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.ThanhChuDe a{font-size:14px;padding:6px 14px;border:1px solid var(--xanh-dam);border-radius:20px;text-decoration:none;color:var(--xanh-dam)}.ThanhChuDe a:hover{background:var(--xanh-dam);color:#fff}
+.TheChuDe{background:#fff;border:1px solid #eadfb8;border-left:4px solid var(--xanh-dam);padding:26px;margin-bottom:22px}
+.TheChuDe .Nhan{font-size:13px;letter-spacing:.06em;color:var(--do-tieu-de);font-weight:bold;text-transform:uppercase}
+.TheChuDe h3{font:normal clamp(22px,2.8vw,30px)/1.25 'Chonburi',serif;color:var(--xanh-dam);margin:4px 0 16px}
+.DiemY{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;counter-reset:y}
+.DiemY li{counter-increment:y;position:relative;padding-top:38px}
+.DiemY li::before{content:counter(y);position:absolute;top:0;left:0;width:30px;height:30px;border-radius:50%;background:var(--vang-nut);color:#022713;font:bold 14px/30px 'SF Pro',sans-serif;text-align:center}
+.DiemY b{display:block;margin-bottom:4px}.DiemY span{color:#444;font-size:15px}
+.ThanhTip{margin-top:20px;display:grid;gap:8px}
+.Tip{background:var(--xanh-dam);color:#fff;padding:11px 16px;border-radius:6px;font-size:15px}
+.Tip .SoTip{color:var(--vang-chu);font-weight:bold;margin-right:8px}.Tip em{display:block;color:#bfd5c6;font-size:13px}
+.GhiChu{margin-top:14px;font-style:italic;color:#666}
+.DieuHuong{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:34px}
+.BoLoc{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+.BoLoc input,.BoLoc select{height:46px;padding:0 14px;background:#ececec;border:1px solid transparent;border-radius:8px;font-size:16px;outline:none}
+.BoLoc input{flex:1;min-width:220px}.BoLoc input:focus,.BoLoc select:focus{background:#fff;border-color:var(--vang-chu)}
+.DongTip{display:grid;grid-template-columns:86px 1fr;gap:16px;background:#fff;border:1px solid #eadfb8;padding:16px 20px;margin-bottom:10px}
+.DongTip .So{font:normal 26px 'Chonburi',serif;color:var(--do-tieu-de)}.DongTip b{display:block;color:var(--xanh-dam)}.DongTip em{color:#777;font-size:14px}.DongTip small{display:block;color:#555;margin-top:4px}
+.DongTip[hidden],.KhongCo[hidden]{display:none}.KhongCo{text-align:center;color:#777;padding:30px}
+.KhungQuiz{max-width:820px;margin:0 auto;background:#fff;border:1px solid #eadfb8;padding:clamp(20px,4vw,40px)}
+.TienDo{height:6px;background:#eee;margin-bottom:22px}.TienDo i{display:block;height:100%;width:0;background:var(--vang-chu);transition:width .3s}
+.CauHoi{font:normal clamp(20px,2.6vw,27px)/1.35 'Chonburi',serif;color:var(--xanh-dam);margin-bottom:20px}
+.DapAn{display:grid;gap:10px}.DapAn button{text-align:left;padding:14px 18px;background:#f6f2e4;border:1px solid #e3d9b5;font-size:16px;cursor:pointer}
+.DapAn button:hover:not(:disabled){border-color:var(--xanh-dam)}.DapAn .Dung{background:#d9efe0;border-color:#1E7C43}.DapAn .Sai{background:#f8dcd6;border-color:var(--do-tieu-de)}
+.DapAn button:disabled{cursor:default}.KetQuaSo{font:normal 64px 'Chonburi',serif;color:var(--do-tieu-de);text-align:center}
+.ChanTrang{background:var(--xanh-header);border-top:4px solid var(--vang-chu);color:#ddd;padding:34px 0;font-size:14px}
+.ChanTrangHop{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}.ChanTrang b{color:#fff;display:block;margin-bottom:4px}
+@media(max-width:900px){.DauTrangHop{flex-wrap:wrap;padding:14px 0 10px}.ThanhMenuChinh{order:3;width:100%}.DanhSachMenu{flex-wrap:wrap;justify-content:center;gap:2px 22px}.LuoiThe{grid-template-columns:1fr}.DongTip{grid-template-columns:1fr;gap:4px}}
